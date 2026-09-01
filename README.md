@@ -27,7 +27,7 @@ npx skills add zxc15001209233/requirements-to-dev-skill -g
 
 不支持 `skills add` 的编辑器（部分 Copilot、Trae、CodeBuddy 等）：把**本目录整份**放进项目（不要只拷 `SKILL.md`），在该产品的项目指令里写明：先读本目录 `SKILL.md`，细则读同目录 `通用*.md`。常见落点包括 `AGENTS.md`、`.github/copilot-instructions.md` 或产品自己的 skills / 自定义指令。
 
-本 Skill 只提供按需流程与细则（均为 `.md`），不包含项目总规则。每轮门禁（没有 `go` 不改文件）由各项目自行安装 `AI工作规范.md`：Cursor 放 `.cursor/rules/`（需同名 `.mdc` 软链且 `alwaysApply: true`），Trae 放 `.trae/rules/`，CodeBuddy 放 `.codebuddy/rules/`。
+本 Skill 提供按需流程与细则（均为 `.md`）。协作门禁：项目已有总规则则用项目的；没有时用 `SKILL.md` 默认门禁。要每轮对话都守 `go`，建议项目自行安装 `AI工作规范.md`：Cursor 放 `.cursor/rules/`（需同名 `.mdc` 软链且 `alwaysApply: true`），Trae 放 `.trae/rules/`，CodeBuddy 放 `.codebuddy/rules/`。
 
 ## 使用方式
 
@@ -49,7 +49,7 @@ Agent 能读到本 Skill 后即可说，例如：
   → 对照验收要点通过后标「已完成」
 ```
 
-写需求 / 选型 / 计划时，门禁以 `SKILL.md` 为准。要每轮对话都守 `go`，须在项目规则目录自行安装 `AI工作规范.md`（见上文）。
+写需求 / 选型 / 计划时：规模分流与就绪门禁以 `SKILL.md` 为准；协作门禁有项目总规则用项目的，否则用 `SKILL.md` 默认节。数据大屏原型委托 `bi-dashboard-generator`。
 
 **不要只分发 `SKILL.md`。** 写需求 / 选型 / 计划时 Agent 会按阶段打开同目录附件。
 
@@ -76,6 +76,7 @@ SKILL.md                          # 流程、门禁、路径判定
 
 | 时间 | 说明 |
 |---|---|
+| 2026-09-01 | 协作门禁改为「有项目总规则用项目的，否则用本 Skill 默认」；description 去掉 `go` 触发词；大屏原型委托 `bi-dashboard-generator` |
 | 2026-08-31 | 门禁以本 Skill 为准，不再依赖项目内 Cursor `.mdc`；README 补充非 `skills add` 环境的整目录用法 |
 | 2026-08-31 | 三个核心规范补规则头，并增加同名 `.mdc` 链接，便于拷进 Cursor `.cursor/rules/` |
 | 2026-08-31 | 去掉三个 `.mdc` 与规则头；Skill 只保留 `.md`。每轮门禁改为由项目自行安装 AI工作规范 |

@@ -1,17 +1,19 @@
 ---
 name: requirements-to-dev
-description: Use when writing, reviewing, or revising 需求规格, 技术选型, 开发计划, or 设计契约; when starting a new business project from PM materials or UI; when the user mentions 功能章, 轻量路径, 完整路径, 任务包, go 确认, or taking requirements through module implementation and acceptance.
+description: Use when writing, reviewing, or revising 需求规格, 技术选型, 开发计划, or 设计契约; when starting a new business project from PM materials or UI; when the user mentions 功能章, 轻量路径, 完整路径, or 任务包.
 ---
 
 # 需求到研发
 
 从已有 PM 材料与 UI，产出需求规格，再按模块做到可验收。不覆盖编码风格、排期人力、部署运维、CI/Jenkins、本机 JDK 路径。
 
-协作门禁、规模分流、就绪门禁、模块状态与 bug 规则以**本 Skill**为准。项目若另有总规则，修订上述段落时两边同步；不要求项目存在特定文件名或 Cursor `.mdc`。
+规模分流、就绪门禁、模块状态以**本 Skill**为准。协作门禁（`go` / 变更日志 / 审核外置 / bug 目录）：**项目已有总规则则用项目的**（如 `AI工作规范`），本 Skill 不覆盖；项目没有总规则时，使用下一节默认门禁。不要求项目存在特定文件名或 Cursor `.mdc`。
 
 细则按阶段再读**本目录**附件，不要把全部规范一次性塞进上下文。附件必须与 `SKILL.md` 放在同一目录，不要只拷主文件。
 
-## 协作门禁
+界面原型若是数据可视化大屏 / 看板 / 驾驶舱：委托 `bi-dashboard-generator` 出确认单与原型；本 Skill 只把原型路径写入需求章节，不在本 Skill 内画大屏或写图表 option。大屏确认之后若还要数据模型、接口契约或开发计划，仍由本 Skill 承接。
+
+## 协作门禁（仅当项目没有总规则时使用）
 
 **没有 `go`，禁止任何文件的创建、修改、删除。**
 
@@ -68,7 +70,7 @@ PM 材料 + UI
 
 读 [通用需求规格规范.md](通用需求规格规范.md)。落地步骤见 [通用需求规格规范-使用指南.md](通用需求规格规范-使用指南.md)；套模板见 [通用需求规格规范-示例.md](通用需求规格规范-示例.md)；字段表/流转/附录 F 草稿见 [通用需求规格规范-附录.md](通用需求规格规范-附录.md)。
 
-要点：一章一个功能；确定 / 待定 / 示例必须分开；有界面必须 Markdown 链接原型（或「待生成」）；涉及数据只引用模型，不在正文定义字段全集。
+要点：一章一个功能；确定 / 待定 / 示例必须分开；有界面必须 Markdown 链接原型（或「待生成」）；数据大屏类原型委托 `bi-dashboard-generator`；涉及数据只引用模型，不在正文定义字段全集。
 
 ### 2. 确认技术栈
 
@@ -115,4 +117,5 @@ PM 材料 + UI
 - 只拆功能章，不做基座/联调
 - 审核结论写进需求/设计正文
 - 只拷 `SKILL.md`、不带同目录 `通用*.md` 附件
+- 数据大屏类原型在本 Skill 内画图或写图表 option（应委托 `bi-dashboard-generator`）
 - 本 Skill 展开部署运维（按项目自己写 runbook）
