@@ -49,7 +49,7 @@ Agent 能读到本 Skill 后即可说，例如：
   → 对照验收要点通过后标「已完成」
 ```
 
-写需求 / 选型 / 计划时：规模分流与就绪门禁以 `SKILL.md` 为准；协作门禁有项目总规则用项目的，否则用 `SKILL.md` 默认节。数据大屏原型委托 `bi-dashboard-generator`。
+写需求 / 选型 / 计划时：规模分流与就绪门禁以 `SKILL.md` 为准；协作门禁有项目总规则用项目的，否则用 `SKILL.md` 默认节。数据大屏原型委托 `bi-dashboard-generator`（先读对方 `SKILL.md`，未安装则停）。混合文档由本 Skill 先判定范围。
 
 **不要只分发 `SKILL.md`。** 写需求 / 选型 / 计划时 Agent 会按阶段打开同目录附件。
 
@@ -76,6 +76,7 @@ SKILL.md                          # 流程、门禁、路径判定
 
 | 时间 | 说明 |
 |---|---|
+| 2026-09-01 | 补交接读对方 SKILL、未安装则停；混合文档由本 Skill 先判定范围；写明如何判定「已有总规则」 |
 | 2026-09-01 | 协作门禁改为「有项目总规则用项目的，否则用本 Skill 默认」；description 去掉 `go` 触发词；大屏原型委托 `bi-dashboard-generator` |
 | 2026-08-31 | 门禁以本 Skill 为准，不再依赖项目内 Cursor `.mdc`；README 补充非 `skills add` 环境的整目录用法 |
 | 2026-08-31 | 三个核心规范补规则头，并增加同名 `.mdc` 链接，便于拷进 Cursor `.cursor/rules/` |
