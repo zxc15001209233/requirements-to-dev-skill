@@ -275,7 +275,7 @@ PM 材料 + UI（用户只需提供；转规格由本 Skill 做）
 
 对照本模块 **完成口径** 自测通过后，才能标「已完成」。编译通过不算完成。开始做改为「进行中」；依赖未齐改为「阻塞」。完成口径为「契约落盘」的模块，契约已写并经该口径核对即可完成，禁止因「没接后端 / 真接口未测」一直停在「进行中」。无库项目完成口径为「页面或 mock 自测」的模块，按该口径关闭。
 
-**中后台 Vue 基座（有已审 admin HTML、§2 为 Vue + Element Plus 时）**：写第一页之前，整份拷贝 `admin-console-generator` 的 `templates/element-theme.less` 与 `templates/admin-shell.vue`（改编），并遵守该 Skill 的 `vue-bridge.md`。管理根必须有 `.admin-root`。与大屏同仓时禁止用大屏 `element-dark` 当管理皮肤、禁止改那份文件、禁止给 `html` 写 `data-theme`。EP 焦点环打在 wrapper 上。登录表 `label-position="top"`。禁止借口「不承诺 1:1」。规格选 B 仍须拷贝该 less 作 token 与隔离。
+**中后台 Vue 基座（有已审 admin HTML、§2 为 Vue + Element Plus 时）**：写第一页之前，整份拷贝 `admin-console-generator` 的 `templates/element-theme.less` 与 `templates/admin-shell.vue`（改编），并遵守该 Skill 的 `vue-bridge.md`。管理根必须有 `.admin-root`。壳须带顶栏下多页签（`keep-alive` 跟 `meta.keepAlive`）。与大屏同仓时禁止用大屏 `element-dark` 当管理皮肤、禁止改那份文件、禁止给 `html` 写 `data-theme`。EP 焦点环打在 wrapper 上。登录表 `label-position="top"`。禁止借口「不承诺 1:1」。规格选 B 仍须拷贝该 less 作 token 与隔离。
 
 **联调模块只能用「真接口联调」关闭**：禁止拿 mock 自测、页面自测或「契约已落盘」关掉联调模块——那会让整个项目每个模块都靠 mock 收尾、真接口一次没通过。项目确实没有后端（§2 写明不用库 / 只用 mock）时，计划里不设联调模块，并写明「本项目无真接口联调」，不得把它挂成「已完成」。
 
